@@ -25,35 +25,39 @@ void stu_draw_line(t_bunny_pixelarray *px,
     int i;
     int j;
     t_bunny_position pos;
-    int z;
+    //int z;
     int a;
     int b;
     int c;
     int d;
+    // int m;
 
     a = pos_a->x;
     b = pos_a->y;
     c = pos_b->x;
     d = pos_b->y;
-    if (pos_a->x > pos_b->x) {
+    /*  if (pos_a->x >= pos_b->x) {
         z = pos_a->x;
         pos_a-> x = pos_b->x;
-        pos_b-> x = z;
+        pos_b-> x = z ;
     }
-    if (pos_a-> y > pos_b->y){
-        z = pos_a-> y;
+    if (pos_a-> y >= pos_b->y){
+        m = pos_a-> y;
         pos_a-> y = pos_b->y;
-        pos_b-> y = z;
+        pos_b-> y = m;
     }
+    */
+
     i = pos_a-> x;
-    j = pos_b-> y;
-    if (pos_b-> x - pos_a-> x >= pos_b-> y - pos_a-> y)
+    j = pos_a-> y;
+    if (pos_b-> x - pos_a-> x >= pos_b-> y - pos_a-> y) {
         while(i != pos_b-> x){
             pos.x = i;
             pos.y = get_value(b, d, get_ratio(a, c, i));
             put_pixel(px, &pos, color);
             i += 1;
-        } else {
+        }
+    } else {
         while(j != pos_b-> y ){
             pos.y = j;
             pos.x = get_value(a, c, get_ratio(b, d, j));
