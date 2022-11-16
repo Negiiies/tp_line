@@ -27,27 +27,32 @@ int main(void)
     px = bunny_new_pixelarray(l, h);
     origin.x = 0;
     origin.y = 0;
-    pos_a.x = 0;
+    pos_a.x = l ;
     pos_a.y = 0;
-    pos_b.x = l;
+    pos_b.x = 0;
     pos_b.y = h;
     clear_pixelarray(px, YELLOW);
-
-     while(pos_a.x < l) {
     stu_draw_line(px, &pos_a, &pos_b, RED);
     bunny_blit(&win->buffer, &px->clipable, &origin);
     bunny_display(win);
-            pos_a.x += 1;
-            pos_b.x -= 1;
-        }
-     while(pos_a.y < h) {
-            stu_draw_line(px, &pos_b, &pos_a, RED);
-            bunny_blit(&win->buffer, &px->clipable, &origin);
-            bunny_display(win);
-            pos_a.y += 1;
-            pos_b.y -= 1;
-        }
-        usleep(1e6);
-        bunny_stop(win);
-        return (EXIT_SUCCESS);
+    /*int i;
+    int j;
+    j = 0;
+    i = 0;
+    while(pos_a.x < l) {
+        pos_a.x += 1;
+        pos_b.x -= 1;
+        i += 1;
+    }
+        while(pos_a.y < h) {
+         stu_draw_line(px, &pos_b, &pos_a, RED);
+         bunny_blit(&win->buffer, &px->clipable, &origin);
+         bunny_display(win);
+         pos_a.y += 1;
+         pos_b.y -= 1;
+         j += 1;
+         }*/
+    usleep(1e6);
+    bunny_stop(win);
+    return (EXIT_SUCCESS);
 }
