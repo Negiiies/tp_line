@@ -30,13 +30,13 @@ void stu_draw_line(t_bunny_pixelarray *px,
     int b;
     int c;
     int d;
-    // int m;
+    //int m;
 
     a = pos_a->x;
     b = pos_a->y;
     c = pos_b->x;
     d = pos_b->y;
-    /*  if (pos_a->x >= pos_b->x) {
+    /*       if (pos_a->x >= pos_b->x) {
         z = pos_a->x;
         pos_a-> x = pos_b->x;
         pos_b-> x = z ;
